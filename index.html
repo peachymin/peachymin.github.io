@@ -2039,7 +2039,7 @@ return _o.apply(this,arguments)}})();
 /* size the picnic scene to the space left under the heading and above the footer */
 (()=>{const st=document.querySelector('.stage'),sub=document.querySelector('.sub'),ft=document.querySelector('.foot');
 const fit=()=>{if(matchMedia('(max-width:700px)').matches){const hd=document.querySelector('#scene>header'),av=innerHeight-hd.offsetHeight-ft.offsetHeight-32-72;document.documentElement.style.setProperty('--sw',Math.max(240,av*1.2286)+'px');return}
- const top=Math.max(sub.getBoundingClientRect().bottom,document.querySelector('#scene>header').getBoundingClientRect().bottom)+scrollY,mt=parseFloat(getComputedStyle(st).marginTop)||0,
+ const top=sub.getBoundingClientRect().bottom+scrollY,mt=parseFloat(getComputedStyle(st).marginTop)||0,
   avail=innerHeight-top-mt-ft.offsetHeight-32-24;
  document.documentElement.style.setProperty('--sw',Math.max(260,avail*1.2286)+'px')};
 addEventListener('resize',fit);(document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(fit);fit();setTimeout(fit,700);setTimeout(fit,2500);
